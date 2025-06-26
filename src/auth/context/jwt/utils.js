@@ -1,4 +1,4 @@
-import { paths } from 'src/routes/paths';
+// paths removed as auth pages are not available
 
 import axios from 'src/utils/axios';
 
@@ -59,7 +59,7 @@ export function tokenExpired(exp) {
     try {
       alert('Token expired!');
       sessionStorage.removeItem(STORAGE_KEY);
-      window.location.href = paths.auth.jwt.signIn;
+      window.location.href = '/';
     } catch (error) {
       console.error('Error during token expiration:', error);
       throw error;
