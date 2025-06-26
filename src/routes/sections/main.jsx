@@ -12,16 +12,9 @@ const FaqsPage = lazy(() => import('src/pages/faqs'));
 const AboutPage = lazy(() => import('src/pages/about-us'));
 const ContactPage = lazy(() => import('src/pages/contact-us'));
 const PricingPage = lazy(() => import('src/pages/pricing'));
-const PaymentPage = lazy(() => import('src/pages/payment'));
 const ComingSoonPage = lazy(() => import('src/pages/coming-soon'));
 const MaintenancePage = lazy(() => import('src/pages/maintenance'));
-// Product
-const ProductListPage = lazy(() => import('src/pages/product/list'));
-const ProductDetailsPage = lazy(() => import('src/pages/product/details'));
-const ProductCheckoutPage = lazy(() => import('src/pages/product/checkout'));
-// Blog
-const PostListPage = lazy(() => import('src/pages/post/list'));
-const PostDetailsPage = lazy(() => import('src/pages/post/details'));
+
 // Error
 const Page500 = lazy(() => import('src/pages/error/500'));
 const Page403 = lazy(() => import('src/pages/error/403'));
@@ -58,27 +51,8 @@ export const mainRoutes = [
             path: 'faqs',
             element: <FaqsPage />,
           },
-          {
-            path: 'blank',
-            element: <BlankPage />,
-          },
-          {
-            path: 'product',
-            children: [
-              { element: <ProductListPage />, index: true },
-              { path: 'list', element: <ProductListPage /> },
-              { path: ':id', element: <ProductDetailsPage /> },
-              { path: 'checkout', element: <ProductCheckoutPage /> },
-            ],
-          },
-          {
-            path: 'post',
-            children: [
-              { element: <PostListPage />, index: true },
-              { path: 'list', element: <PostListPage /> },
-              { path: ':title', element: <PostDetailsPage /> },
-            ],
-          },
+
+
         ],
       },
       {
@@ -89,14 +63,7 @@ export const mainRoutes = [
           </SimpleLayout>
         ),
       },
-      {
-        path: 'payment',
-        element: (
-          <SimpleLayout>
-            <PaymentPage />
-          </SimpleLayout>
-        ),
-      },
+
       {
         path: 'coming-soon',
         element: (
