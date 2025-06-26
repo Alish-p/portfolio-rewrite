@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
+import { Ribbons } from 'src/components/ribbons';
+
 import { HomeView } from 'src/sections/home/view';
 
 // ----------------------------------------------------------------------
@@ -17,6 +19,10 @@ export default function Page() {
         <title> {metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </Helmet>
+
+      <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none' }}>
+        <Ribbons colors={['#ffffff']} />
+      </div>
 
       <HomeView />
     </>
